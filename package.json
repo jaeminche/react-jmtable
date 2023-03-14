@@ -1,7 +1,8 @@
 {
   "name": "react-jmtable",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.8",
+  "module": "dist/JmTable.js",
+  "main": "dist/JmTable.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -15,7 +16,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "publish": "rm -rf dist && mkdir dist && babel src -d dist --copy-files"
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +36,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/preset-react": "^7.18.6"
   }
 }
