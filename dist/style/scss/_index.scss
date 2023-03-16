@@ -1,0 +1,72 @@
+* {
+  font-family: sans-serif;
+
+
+  textarea {
+    outline: none !important;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    resize: none;
+  }
+
+  // input autocomplete background off
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-transition: background-color 9999s ease-out;
+    -webkit-text-fill-color: var(--font-color) !important;
+  }
+
+
+  .vertically-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .vertically-center-inline {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &:not(.not-scroll) {
+    &::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    /* scrollbar */
+    &::-webkit-scrollbar-thumb {
+      background: var(--main-color);
+    }
+
+    /* scrollbar bg */
+    &::-webkit-scrollbar-track {
+      background: var(--main-color-light);
+    }
+  }
+
+  /* Hide the up and down arrows on input[type=number] */
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  table {
+    width: 100%;
+    border-spacing: 0;
+    overflow: hidden;
+    border-collapse: collapse;
+  }
+
+  .clickable {
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+}
