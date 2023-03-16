@@ -1,14 +1,14 @@
 /* eslint-disable react/prop-types */
-import React from 'react'
-import TableHead from './components/table/TableHead';
-import TableWrapper from './components/styleComponents/Wrapper';
+import React from 'react';
+import TableHead from './common/table/TableHead';
+import TableWrapper from './styleComponents/Wrapper';
 // Scss
-import './style/scss/styles.scss';
+import '../style/scss/styles.scss';
 
 // Prototype
-import './utils/prototype';
+import '../utils/prototype';
 
-import TableSection from './components/table/TableSection';
+import TableSection from './common/table/TableSection';
 
 const JmTable = props => {
   const { tableHeader } = props || {};
@@ -16,9 +16,7 @@ const JmTable = props => {
   return (
     <TableWrapper>
       <table width={props.tWidth ? props.tWidth : '100%'} className="text-sm">
-        <TableHead
-          tableHeader={tableHeader}
-        />
+        <TableHead tableHeader={tableHeader} />
         {props.myForm?.length > 0 ? (
           <TableSection tableHeader={tableHeader} {...props} />
         ) : (
