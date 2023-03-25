@@ -1,8 +1,8 @@
 {
   "name": "react-jmtable",
-  "version": "0.2.12",
-  "module": "dist/JmTable.js",
-  "main": "dist/JmTable.js",
+  "version": "0.2.16",
+  "module": "dist/index.js",
+  "main": "dist/index.js",
   "keywords": ["table", "react-table"],
   "author": "Jae M. Choi",
   "license": "MIT",

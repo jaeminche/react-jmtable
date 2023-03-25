@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { SAMPLE_HEADER, SAMPLE_BODY } from './lib/constants/sampledata';
 // import JmTableContainer from './lib/container/JmTableContainer';
-import useJmTable from './lib/hook/useJmTable';
+import useJmTable from './lib';
 
 function App() {
   const { checkedIndexes, JmTable, tableBody } = useJmTable({

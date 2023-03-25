@@ -1,10 +1,10 @@
 import React, { useCallback, useState } from 'react';
-import JmTable from '../components/JmTable';
+import JmTable from './components/JmTable';
 // Scss
-import '../style/scss/styles.scss';
+import './style/scss/styles.scss';
 
 // Prototype
-import '../utils/prototype';
+import './utils/prototype';
 
 const useJmTable = props => {
   const [checkedRowIndexes, setCheckedRowIndexes] = useState([]);
