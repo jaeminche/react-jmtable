@@ -59,11 +59,6 @@ const StyledButton = styled.div`
     }
   }
 
-  div {
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center; */
-  }
   .disabled {
     opacity: 0.4;
     cursor: not-allowed;

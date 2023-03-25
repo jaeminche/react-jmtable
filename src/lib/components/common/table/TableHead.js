@@ -23,24 +23,24 @@ const TableHead = props => {
 
   return (
     <Thead>
-        <tr>
-          {tableHeader.map((head, idx) => {
-            return (
-              <th
-                key={`${tableId}-th-${idx}`}
-                colSpan={head.colspan || '1'}
-                rowSpan={head.rowspan || '1'}
-                className={head.key === 'check' ? 'cursor-pointer' : ''}
-                onClick={tableHeadClickEvent}
-                width={head.width}
-              >
-                {head.label}
-              </th>
-            );
-          })}
-        </tr>
+      <tr>
+        {tableHeader.map((head, idx) => {
+          return (
+            <th
+              key={`${tableId}-th-${idx}`}
+              colSpan={head.colspan || '1'}
+              rowSpan={head.rowspan || '1'}
+              className={head.key === 'check' ? 'cursor-pointer' : ''}
+              onClick={tableHeadClickEvent}
+              width={head.width}
+            >
+              {head.label}
+            </th>
+          );
+        })}
+      </tr>
     </Thead>
   );
 };
 
-export default TableHead;
+export default React.memo(TableHead);

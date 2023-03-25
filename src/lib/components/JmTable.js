@@ -31,4 +31,4 @@ const JmTable = props => {
   );
 };
 
-export default JmTable;
+export default React.memo(JmTable);

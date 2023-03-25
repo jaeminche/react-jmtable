@@ -21,12 +21,12 @@ const Wrapper = styled.div`
 
 export const CheckBox = React.memo(
   ({
-    id = 'chk',
+    checkboxid = 'chk',
     labelText = '',
     value,
     idx,
     toggleAll,
-    handleCheckedItemIndexes,
+    handleCheckedRowIndexes,
     ...props
   }) => {
     const [checked, setChecked] = useState(value);
@@ -36,23 +36,23 @@ export const CheckBox = React.memo(
     }, [toggleAll]);
 
     const handleChecked = useCallback(() => {
-      if (!handleCheckedItemIndexes) {
+      if (!handleCheckedRowIndexes) {
         return null;
       }
       setChecked(!checked);
-      handleCheckedItemIndexes(idx);
-    }, [checked, handleCheckedItemIndexes]);
+      handleCheckedRowIndexes(idx);
+    }, [checked, handleCheckedRowIndexes]);
 
     return (
       <Wrapper>
         <input
           type="checkbox"
-          id={id}
-          checked={checked}
+          id={checkboxid}
+          checked={checked || false}
           onChange={handleChecked}
           {...props}
         />
-        <label htmlFor={id} className="cursor-pointer">
+        <label htmlFor={checkboxid} className="cursor-pointer">
           {checked ? <img src={CHECK_YES} /> : <img src={CHECK_NO} />}
           {labelText}
         </label>

@@ -1,14 +1,16 @@
 /* eslint-disable no-unused-vars */
 export const SAMPLE_HEADER = [
-  { key: 'checkbox', label: '', width: '4%' },
-  { key: 'no', label: 'No', width: '6%' },
-  { key: 'id', label: 'id', width: '8%' },
-  { key: 'username', label: 'user name', width: '9%' },
-  { key: 'tel', label: 'tel', width: '9%' },
-  { key: 'issuedAmount', label: 'issued amount', width: '14%' },
-  { key: 'memo', label: 'memo', width: '8%' },
-  { key: 'createdAt', label: 'created at', width: '8%' },
-  { key: 'del', label: 'del', width: '5%' },
+  { key: 'checkbox', label: '', type: 'checkbox', width: '4%' },
+  { key: 'no', label: 'No', type: 'no', width: '6%' },
+  { key: 'id', label: 'id', type: 'text', width: '8%' },
+  { key: 'username', label: 'user name', type: 'text', width: '9%' },
+  { key: 'tel', label: 'tel', type: 'tel', width: '9%' },
+  { key: 'issuedAmount', label: 'issued amount', type: 'number', width: '14%' },
+  { key: 'memo', label: 'memo', type: 'text', width: '8%' },
+  { key: 'createdAt', label: 'created at', type: 'date', width: '8%' },
+  { key: 'mod', label: 'Mod', type: 'evtBtn', width: '5%' },
+  { key: 'mod1', label: 'Mod1', type: 'evtBtn', width: '5%' },
+  { key: 'del', label: 'del', type: 'del-x-box', width: '5%' },
 ];
 
 const phoneNumbers = genPhoneNumbers(2000);
@@ -22,7 +24,9 @@ export const SAMPLE_BODY = Array(2000)
       tel: phoneNumbers[index],
       issuedAmount: 1000,
       memo: 'memo',
-      createdAt: true,
+      mod: '',
+      mod1: '',
+      createdAt: new Date(),
     };
   });
 

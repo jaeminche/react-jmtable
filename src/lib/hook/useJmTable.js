@@ -1,10 +1,17 @@
 import React, { useCallback, useState } from 'react';
 import JmTable from '../components/JmTable';
+// Scss
+import '../style/scss/styles.scss';
 
-const JmTableContainer = props => {
+// Prototype
+import '../utils/prototype';
+
+const useJmTable = props => {
+  console.log('========= / file: useJmTable.js:7 / props:', props);
   const [checkedRowIndexes, setCheckedRowIndexes] = useState([]);
 
   const handleCheckedRowIndexes = useCallback(idx => {
+    console.log('========= / file: useJmTable.js:11 / idx:', idx);
     setCheckedRowIndexes(prev => {
       if (Array.isArray(idx)) {
         return idx;
@@ -19,9 +26,12 @@ const JmTableContainer = props => {
     });
   }, []);
 
-  return (
-    <JmTable handleCheckedRowIndexes={handleCheckedRowIndexes} {...props} />
-  );
+  return {
+    checkedIndexes: checkedRowIndexes,
+    JmTable: (
+      <JmTable handleCheckedRowIndexes={handleCheckedRowIndexes} {...props} />
+    ),
+  };
 };
 
-export default React.memo(JmTableContainer);
+export default useJmTable;

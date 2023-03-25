@@ -1,8 +1,9 @@
+/* eslint-disable react/display-name */
 /* eslint-disable no-undef */
 /* eslint-disable react/prop-types */
 import React from 'react';
 import styled from 'styled-components';
-import { DelBtn, ModBtn } from '../button/ButtonWithData';
+import { DelBtn, EvtBtn } from '../button/ButtonWithData';
 import { CheckBox } from '../CheckBox';
 import { isDateFormat } from '../../../utils/helper';
 
@@ -14,7 +15,11 @@ const TBody = styled.tbody`
   }
 `;
 
-const ARow = props => {
+const StyledTr = styled.tr`
+  text-align: center;
+`;
+
+const MemoizedTableRow = React.memo(props => {
   const {
     rowD,
     tableHeader,
@@ -22,13 +27,13 @@ const ARow = props => {
     focusedSerialNo = null,
     onClickOnDetail = null,
     idx,
-    handleCheckedItemIndexes,
+    handleCheckedRowIndexes,
     ...rest
   } = props || {};
   const tBodyCols = tableHeader?.map(item => item.key);
 
   return (
-    <tr
+    <StyledTr
       key={idx}
       onClick={onClickOnDetail ? () => onClickOnDetail(rowD) : null}
       className={
@@ -41,42 +46,42 @@ const ARow = props => {
       }
     >
       {tBodyCols.map((tdKey, idx1) => {
+        const { type: colDataType, label: colDataLabel } = tableHeader[idx1];
         return (
           <td key={idx1} width={tableHeader[idx1].width}>
-            {tdKey === 'mod' ? (
-              <ModBtn idx={idx} rowD={rowD} {...rest} />
-            ) : tdKey === 'del' ? (
-              <DelBtn idx={idx} {...rest} />
-            ) : tdKey === 'checkbox' ? (
+            {colDataType === 'evtBtn' ? (
+              <EvtBtn idx={idx} rowD={rowD} label={colDataLabel} {...rest} />
+            ) : colDataType === 'del-x-box' ? (
+              <DelBtn idx={idx} label={colDataLabel} {...rest} />
+            ) : colDataType === 'checkbox' ? (
               <div className="flex justify-center items-center">
                 <CheckBox
-                  id={`Chk${idx}`}
+                  checkboxid={`Chk${idx}`}
                   value={rowD.check}
                   idx={idx}
                   toggleAll={props.toggleAll}
-                  handleCheckedItemIndexes={handleCheckedItemIndexes}
+                  handleCheckedRowIndexes={handleCheckedRowIndexes}
                 />
               </div>
-            ) : tdKey === 'no' ? (
-              idx + 1
-            ) : tdKey === 'price' || tdKey === 'balance' ? (
+            ) : colDataType === 'no' ? (
+              <span className="text-center">{idx + 1}</span>
+            ) : colDataType === 'number' ? (
               <span className="float-right mr-2">
                 {Number(rowD[tdKey])?.setComma()}
               </span>
-            ) : tdKey === 'createdAt' &&
+            ) : colDataType === 'date' &&
               rowD[tdKey] &&
               isDateFormat(rowD[tdKey]) ? (
-              new Date(rowD[tdKey]).format('yyyy-MM-dd hh:mm')
+              new Date(rowD[tdKey]).format('yyyy-MM-dd HH:mm')
             ) : (
               rowD[tdKey]
             )}
           </td>
         );
       })}
-    </tr>
+    </StyledTr>
   );
-};
-const MemoizedTableRow = React.memo(ARow);
+});
 
 const TableSection = props => {
   const { myForm, ...rest } = props;
@@ -89,8 +94,8 @@ const TableSection = props => {
       {myForm?.length > 0 ? (
         ''
       ) : (
-        <tr className="">
-          <td colSpan={20}>표시할 데이터가 없습니다</td>
+        <tr>
+          <td colSpan={20}>No data to display</td>
         </tr>
       )}
     </TBody>
