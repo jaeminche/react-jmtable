@@ -3,20 +3,21 @@ import React from 'react';
 import ICON_DEL_BTN from '../../../assets/icon/delete.png';
 import Icon from '../Icon';
 import Button from './Button';
-const ModBtn = props => {
+const EvtBtn = props => {
   const {
-    handleMod = null,
+    handleEvent = null,
     idx,
-    tableId = ''
+    tableId = '',
+    label = 'Mod'
   } = props;
   return /*#__PURE__*/React.createElement("label", {
-    htmlFor: `${tableId}-modBtn-${idx}`
+    htmlFor: `${tableId}-evtBtn-${idx}`
   }, /*#__PURE__*/React.createElement(Button, {
     className: "w-14 !important"
-  }, "Mod"), /*#__PURE__*/React.createElement("input", {
-    onClick: handleMod,
+  }, label), /*#__PURE__*/React.createElement("input", {
+    onClick: handleEvent,
     readOnly: true,
-    id: `${tableId}-modBtn-${idx}`,
+    id: `${tableId}-evtBtn-${idx}`,
     value: idx,
     className: "hidden h-0 w-0"
   }));
@@ -43,4 +44,4 @@ const DelBtn = props => {
     className: "hidden h-0 w-0"
   }));
 };
-export { ModBtn, DelBtn };
+export { EvtBtn, DelBtn };

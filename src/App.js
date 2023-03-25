@@ -4,9 +4,12 @@ import { SAMPLE_HEADER, SAMPLE_BODY } from './lib/constants/sampledata';
 import useJmTable from './lib/hook/useJmTable';
 
 function App() {
-  const { checkedIndexes, JmTable, myForm } = useJmTable({
+  const { checkedIndexes, JmTable, tableBody } = useJmTable({
     tableHeader: SAMPLE_HEADER,
-    myForm: SAMPLE_BODY,
+    tableBody: SAMPLE_BODY,
+    customStyle: {
+      tableWidth: '50%',
+    },
   });
   useEffect(() => {
     console.log(
@@ -14,7 +17,7 @@ function App() {
       SAMPLE_HEADER,
       SAMPLE_BODY,
       checkedIndexes,
-      myForm,
+      tableBody,
     );
   }, [checkedIndexes]);
 

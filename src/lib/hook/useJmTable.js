@@ -7,7 +7,6 @@ import '../style/scss/styles.scss';
 import '../utils/prototype';
 
 const useJmTable = props => {
-  console.log('========= / file: useJmTable.js:7 / props:', props);
   const [checkedRowIndexes, setCheckedRowIndexes] = useState([]);
 
   const handleCheckedRowIndexes = useCallback(idx => {

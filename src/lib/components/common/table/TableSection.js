@@ -84,14 +84,14 @@ const MemoizedTableRow = React.memo(props => {
 });
 
 const TableSection = props => {
-  const { myForm, ...rest } = props;
+  const { tableBody, ...rest } = props;
 
   return (
     <TBody>
-      {myForm?.map((rowD, idx) => {
+      {tableBody?.map((rowD, idx) => {
         return <MemoizedTableRow key={idx} rowD={rowD} idx={idx} {...rest} />;
       })}
-      {myForm?.length > 0 ? (
+      {tableBody?.length > 0 ? (
         ''
       ) : (
         <tr>

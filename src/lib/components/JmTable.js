@@ -11,13 +11,18 @@ import '../utils/prototype';
 import TableSection from './common/table/TableSection';
 
 const JmTable = props => {
-  const { tableHeader } = props || {};
+  const {
+    tableHeader,
+    tableBody,
+    customStyle: { tableWidth },
+  } = props || {};
+  // const { tableWidth } = customStyle || {};
 
   return (
-    <TableWrapper>
-      <table width={props.tWidth ? props.tWidth : '100%'} className="text-sm">
+    <TableWrapper tableWidth={tableWidth}>
+      <table className="text-sm">
         <TableHead tableHeader={tableHeader} />
-        {props.myForm?.length > 0 ? (
+        {tableBody?.length > 0 ? (
           <TableSection tableHeader={tableHeader} {...props} />
         ) : (
           <tbody className="border border-borderPrimary">

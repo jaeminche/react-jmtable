@@ -3,17 +3,10 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 const Wrapper = styled.div`
-  /* height: 100%; */
-  height: '70vh';
   overflow-y: auto;
 
   table {
-    ${props =>
-      !props.widthAuto &&
-      css`
-        width: 100%;
-      `}
-
+    width: ${props => props.tableWidth || '100%'};
     td {
       max-width: 0;
       overflow: hidden;
@@ -27,14 +20,11 @@ const Wrapper = styled.div`
 `;
 
 const TableWrapper = props => {
-  const { widthAuto } = props;
+  const { tableWidth } = props;
 
   const { children } = props;
   return (
-    <Wrapper
-      id={'myDiv'}
-      widthAuto={widthAuto}
-    >  
+    <Wrapper id={'myDiv'} tableWidth={tableWidth}>
       {children}
     </Wrapper>
   );
