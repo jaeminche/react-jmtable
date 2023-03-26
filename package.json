@@ -1,9 +1,17 @@
 {
   "name": "react-jmtable",
-  "version": "0.2.16",
+  "version": "0.2.35",
   "module": "dist/index.js",
   "main": "dist/index.js",
-  "keywords": ["table", "react-table"],
+  "files": [
+    "dist",
+    "src",
+    "postcss.config.js"
+  ],
+  "keywords": [
+    "table",
+    "react-table"
+  ],
   "author": "Jae M. Choi",
   "license": "MIT",
   "dependencies": {
@@ -24,10 +32,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build:css": "tailwind build src/styles.css -o build/styles.css && purgecss --config purgecss.config.js --out build/",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "publish:npm": "rm -rf dist && mkdir dist && babel src/lib -d dist --copy-files"
+    "build": "rm -rf dist && mkdir dist && babel src/lib -d dist --copy-files",
+    "purgecss": "purgecss --config purgecss.config.js --css dist/index.css --output dist/index.css",
+    "publish:npm": "yarn build && yarn purgecss"
   },
   "eslintConfig": {
     "extends": [
@@ -50,6 +60,7 @@
   "devDependencies": {
     "@babel/cli": "^7.21.0",
     "@babel/preset-react": "^7.18.6",
-    "autoprefixer": "^10.4.14"
+    "autoprefixer": "^10.4.14",
+    "purgecss": "^5.0.0"
   }
 }

@@ -6,6 +6,9 @@ import './style/scss/styles.scss';
 // Prototype
 import './utils/prototype';
 
+import './index.css';
+// import './index.min.css';
+
 const useJmTable = props => {
   const [checkedRowIndexes, setCheckedRowIndexes] = useState([]);
 
