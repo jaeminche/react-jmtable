@@ -13,6 +13,7 @@ const Wrapper = styled.div`
     display: none;
   }
   label {
+    cursor: pointer;
     display: inline-flex;
     align-items: center;
     gap: 5px;
@@ -44,8 +45,7 @@ export const CheckBox = /*#__PURE__*/React.memo(({
     checked: checked || false,
     onChange: handleChecked
   }, props)), /*#__PURE__*/React.createElement("label", {
-    htmlFor: checkboxid,
-    className: "cursor-pointer"
+    htmlFor: checkboxid
   }, checked ? /*#__PURE__*/React.createElement("img", {
     src: CHECK_YES
   }) : /*#__PURE__*/React.createElement("img", {

@@ -1,13 +1,8 @@
 {
   "name": "react-jmtable",
-  "version": "0.2.35",
+  "version": "0.3.00",
   "module": "dist/index.js",
   "main": "dist/index.js",
-  "files": [
-    "dist",
-    "src",
-    "postcss.config.js"
-  ],
   "keywords": [
     "table",
     "react-table"
@@ -30,12 +25,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build:css": "tailwind build src/styles.css -o build/styles.css && purgecss --config purgecss.config.js --out build/",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "build": "rm -rf dist && mkdir dist && babel src/lib -d dist --copy-files",
-    "purgecss": "purgecss --config purgecss.config.js --css dist/index.css --output dist/index.css",
-    "publish:npm": "yarn build && yarn purgecss"
+    "build": "react-scripts build",
+    "publish:npm": "rm -rf dist && mkdir dist && babel src/lib -d dist --copy-files"
   },
   "eslintConfig": {
     "extends": [

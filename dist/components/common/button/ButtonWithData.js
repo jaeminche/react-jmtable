@@ -3,7 +3,7 @@ import React from 'react';
 import ICON_DEL_BTN from '../../../assets/icon/delete.png';
 import Icon from '../Icon';
 import Button from './Button';
-const EvtBtn = props => {
+const EvtBtn = /*#__PURE__*/React.memo(props => {
   const {
     handleEvent = null,
     idx,
@@ -12,17 +12,17 @@ const EvtBtn = props => {
   } = props;
   return /*#__PURE__*/React.createElement("label", {
     htmlFor: `${tableId}-evtBtn-${idx}`
-  }, /*#__PURE__*/React.createElement(Button, {
-    className: "w-14 !important"
-  }, label), /*#__PURE__*/React.createElement("input", {
+  }, /*#__PURE__*/React.createElement(Button, null, label), /*#__PURE__*/React.createElement("input", {
     onClick: handleEvent,
     readOnly: true,
     id: `${tableId}-evtBtn-${idx}`,
     value: idx,
-    className: "hidden h-0 w-0"
+    style: {
+      display: 'none'
+    }
   }));
-};
-const DelBtn = props => {
+});
+const DelBtn = /*#__PURE__*/React.memo(props => {
   const {
     handleDel = null,
     idx,
@@ -34,14 +34,15 @@ const DelBtn = props => {
     src: ICON_DEL_BTN,
     width: "10px",
     height: "10px",
-    className: "flex justify-center",
     alt: "delete button"
   }), /*#__PURE__*/React.createElement("input", {
     onClick: handleDel,
     readOnly: true,
     id: `${tableId}-delBtn-${idx}`,
     value: idx,
-    className: "hidden h-0 w-0"
+    style: {
+      display: 'none'
+    }
   }));
-};
+});
 export { EvtBtn, DelBtn };
