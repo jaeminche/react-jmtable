@@ -20,14 +20,12 @@
     "@testing-library/user-event": "^13.5.0",
     "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "postcss": "^8.4.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "sass": "^1.59.2",
     "sass-loader": "^13.2.0",
     "styled-components": "^5.3.9",
-    "tailwindcss": "^3.2.7",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -59,8 +57,6 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.21.0",
-    "@babel/preset-react": "^7.18.6",
-    "autoprefixer": "^10.4.14",
-    "purgecss": "^5.0.0"
+    "@babel/preset-react": "^7.18.6"
   }
 }

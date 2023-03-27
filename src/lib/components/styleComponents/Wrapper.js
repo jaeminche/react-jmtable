@@ -6,7 +6,12 @@ const Wrapper = styled.div`
   overflow-y: auto;
 
   table {
+    font-size: 0.875rem;
     width: ${props => props.tableWidth || '100%'};
+
+    tbody {
+      border: 1px solid ${props => props.theme.borderPrimary};
+    }
     td {
       max-width: 0;
       overflow: hidden;

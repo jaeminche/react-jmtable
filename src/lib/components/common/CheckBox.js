@@ -13,6 +13,7 @@ const Wrapper = styled.div`
     display: none;
   }
   label {
+    cursor: pointer;
     display: inline-flex;
     align-items: center;
     gap: 5px;
@@ -52,7 +53,7 @@ export const CheckBox = React.memo(
           onChange={handleChecked}
           {...props}
         />
-        <label htmlFor={checkboxid} className="cursor-pointer">
+        <label htmlFor={checkboxid}>
           {checked ? <img src={CHECK_YES} /> : <img src={CHECK_NO} />}
           {labelText}
         </label>

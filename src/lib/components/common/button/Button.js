@@ -4,7 +4,9 @@ import styled from 'styled-components';
 
 const StyledButton = styled.div`
   display: flex;
+  justify-content: center;
   margin: 0 auto;
+  /* width: 3.5rem; */
 
   button,
   .not-submit-but-box,
@@ -19,7 +21,8 @@ const StyledButton = styled.div`
     text-transform: uppercase;
     transition: var(--transition);
     border: 1px solid var(--border-color);
-    min-height: 30px;
+    min-height: 15px;
+    line-height: 20px;
     width: 110px;
     border-radius: 5px;
 
@@ -70,10 +73,7 @@ const Button = props => {
   const { isSubmit, className, type, onClick, children, ...rest } = props;
 
   return (
-    <StyledButton
-      className={className + 'inline-flex justify-center'}
-      type={type}
-    >
+    <StyledButton type={type}>
       {type === 'file' ? (
         <label htmlFor="fileUpload">
           <input

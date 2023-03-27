@@ -20,12 +20,12 @@ const JmTable = props => {
 
   return (
     <TableWrapper tableWidth={tableWidth}>
-      <table className="text-sm">
+      <table>
         <TableHead tableHeader={tableHeader} />
         {tableBody?.length > 0 ? (
           <TableSection tableHeader={tableHeader} {...props} />
         ) : (
-          <tbody className="border border-borderPrimary">
+          <tbody>
             <tr>
               <td colSpan={tableHeader?.length}>No data to display</td>
             </tr>

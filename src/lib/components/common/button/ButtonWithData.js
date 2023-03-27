@@ -8,13 +8,13 @@ const EvtBtn = props => {
   const { handleEvent = null, idx, tableId = '', label = 'Mod' } = props;
   return (
     <label htmlFor={`${tableId}-evtBtn-${idx}`}>
-      <Button className="w-14 !important">{label}</Button>
+      <Button>{label}</Button>
       <input
         onClick={handleEvent}
         readOnly
         id={`${tableId}-evtBtn-${idx}`}
         value={idx}
-        className="hidden h-0 w-0"
+        style={{ display: 'none' }}
       />
     </label>
   );
@@ -25,19 +25,13 @@ const DelBtn = props => {
 
   return (
     <label htmlFor={`${tableId}-delBtn-${idx}`}>
-      <Icon
-        src={ICON_DEL_BTN}
-        width="10px"
-        height="10px"
-        className="flex justify-center"
-        alt="delete button"
-      />
+      <Icon src={ICON_DEL_BTN} width="10px" height="10px" alt="delete button" />
       <input
         onClick={handleDel}
         readOnly
         id={`${tableId}-delBtn-${idx}`}
         value={idx}
-        className="hidden h-0 w-0"
+        style={{ display: 'none' }}
       />
     </label>
   );

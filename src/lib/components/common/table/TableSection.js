@@ -17,6 +17,33 @@ const TBody = styled.tbody`
 
 const StyledTr = styled.tr`
   text-align: center;
+
+  ${({ isClickable, background }) => `
+    cursor: ${isClickable ? 'pointer' : 'default'};
+    background-color: ${background};
+    &:hover {
+      background-color: ${isClickable ? '#FEF2F2' : 'none'};
+    }
+  `}
+
+  /* .flex justify-center items-center */
+  .checkbox-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  /* float-right mr-2 */
+  .float-right {
+    float: right;
+  }
+  .mr-2 {
+    margin-right: 2px;
+  }
 `;
 
 const MemoizedTableRow = React.memo(props => {
@@ -36,13 +63,12 @@ const MemoizedTableRow = React.memo(props => {
     <StyledTr
       key={idx}
       onClick={onClickOnDetail ? () => onClickOnDetail(rowD) : null}
-      className={
-        focusedUserUuid === rowD['uuid'] ||
-        focusedSerialNo === rowD['serialNumber']
-          ? 'bg-red-50'
-          : onClickOnDetail
-          ? 'hover:bg-gray-200 cursor-pointer'
-          : ''
+      isClickable={focusedUserUuid || focusedSerialNo || onClickOnDetail}
+      background={
+        focusedUserUuid === rowD?.['uuid'] ||
+        focusedSerialNo === rowD?.['serialNumber']
+          ? '#FEF2F2'
+          : 'none'
       }
     >
       {tBodyCols.map((tdKey, idx1) => {
@@ -54,7 +80,7 @@ const MemoizedTableRow = React.memo(props => {
             ) : colDataType === 'del-x-box' ? (
               <DelBtn idx={idx} label={colDataLabel} {...rest} />
             ) : colDataType === 'checkbox' ? (
-              <div className="flex justify-center items-center">
+              <div className="checkbox-center">
                 <CheckBox
                   checkboxid={`Chk${idx}`}
                   value={rowD.check}

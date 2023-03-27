@@ -6,6 +6,7 @@ const IconStyled = styled.div`
   width: auto;
   height: auto;
   display: flex;
+  justify-content: center;
   align-items: center;
 
   img {

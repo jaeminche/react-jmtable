@@ -17,6 +17,10 @@ const Thead = styled.thead`
   :not(.not-scroll) {
     top: -0.5px;
   }
+
+  .cursor-pointer {
+    cursor: pointer;
+  }
 `;
 const TableHead = props => {
   const { tableHeader, tableId, tableHeadClickEvent } = props || {};
