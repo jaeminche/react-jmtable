@@ -4,7 +4,7 @@ import ICON_DEL_BTN from '../../../assets/icon/delete.png';
 import Icon from '../Icon';
 import Button from './Button';
 
-const EvtBtn = props => {
+const EvtBtn = React.memo(props => {
   const { handleEvent = null, idx, tableId = '', label = 'Mod' } = props;
   return (
     <label htmlFor={`${tableId}-evtBtn-${idx}`}>
@@ -18,9 +18,9 @@ const EvtBtn = props => {
       />
     </label>
   );
-};
+});
 
-const DelBtn = props => {
+const DelBtn = React.memo(props => {
   const { handleDel = null, idx, tableId } = props;
 
   return (
@@ -35,6 +35,6 @@ const DelBtn = props => {
       />
     </label>
   );
-};
+});
 
 export { EvtBtn, DelBtn };

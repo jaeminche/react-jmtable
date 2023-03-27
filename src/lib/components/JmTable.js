@@ -11,19 +11,19 @@ import '../utils/prototype';
 import TableSection from './common/table/TableSection';
 
 const JmTable = props => {
-  const {
-    tableHeader,
-    tableBody,
-    customStyle: { tableWidth },
-  } = props || {};
-  // const { tableWidth } = customStyle || {};
+  const { tableHeader, tableBody, customStyle, ...rest } = props || {};
+  const { tableWidth } = customStyle || {};
 
   return (
-    <TableWrapper tableWidth={tableWidth}>
+    <TableWrapper tableWidth={tableWidth || '100%'}>
       <table>
         <TableHead tableHeader={tableHeader} />
         {tableBody?.length > 0 ? (
-          <TableSection tableHeader={tableHeader} {...props} />
+          <TableSection
+            tableHeader={tableHeader}
+            tableBody={tableBody}
+            {...rest}
+          />
         ) : (
           <tbody>
             <tr>

@@ -7,7 +7,7 @@ const Wrapper = styled.div`
 
   table {
     font-size: 0.875rem;
-    width: ${props => props.tableWidth || '100%'};
+    width: ${props => props.tableWidth};
 
     tbody {
       border: 1px solid ${props => props.theme.borderPrimary};
@@ -35,4 +35,4 @@ const TableWrapper = props => {
   );
 };
 
-export default TableWrapper;
+export default React.memo(TableWrapper);

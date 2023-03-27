@@ -8,7 +8,7 @@ function App() {
     tableHeader: SAMPLE_HEADER,
     tableBody: SAMPLE_BODY,
     customStyle: {
-      tableWidth: '50%',
+      tableWidth: '80%',
     },
   });
   useEffect(() => {
