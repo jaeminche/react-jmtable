@@ -1,19 +1,10 @@
 import React, { useCallback, useState } from 'react';
 import JmTable from './components/JmTable';
-// Scss
-import './style/scss/styles.scss';
-
-// Prototype
-import './utils/prototype';
-
-import './index.css';
-// import './index.min.css';
 
 const useJmTable = props => {
   const [checkedRowIndexes, setCheckedRowIndexes] = useState([]);
 
   const handleCheckedRowIndexes = useCallback(idx => {
-    console.log('========= / file: useJmTable.js:11 / idx:', idx);
     setCheckedRowIndexes(prev => {
       if (Array.isArray(idx)) {
         return idx;

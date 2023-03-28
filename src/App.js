@@ -1,16 +1,39 @@
 import React, { useEffect } from 'react';
-import { SAMPLE_HEADER, SAMPLE_BODY } from './lib/constants/sampledata';
-// import JmTableContainer from './lib/container/JmTableContainer';
+import {
+  SAMPLE_HEADER,
+  SAMPLE_BODY,
+  HEADER_PLACEHOLDER,
+} from './lib/constants/sampledata';
 import useJmTable from './lib';
 
 function App() {
+  // for contributors: you can test useJmTable here.
+
+  const [sampleAsyncHeader, setSampleAsyncHeader] =
+    React.useState(HEADER_PLACEHOLDER);
+  const [sampleAsyncBody, setSampleAsyncBody] = React.useState([]);
+
   const { checkedIndexes, JmTable, tableBody } = useJmTable({
-    tableHeader: SAMPLE_HEADER,
-    tableBody: SAMPLE_BODY,
+    // showSampleData: true,  // If developer wants to show sample data, set this to true
+    tableHeader: sampleAsyncHeader, // for testing async data
+    tableBody: sampleAsyncBody, // for testing async data
     customStyle: {
       tableWidth: '80%',
     },
   });
+
+  useEffect(() => {
+    // for testing async data
+    const timer = setTimeout(function () {
+      setSampleAsyncHeader(SAMPLE_HEADER);
+      setSampleAsyncBody(SAMPLE_BODY);
+    }, 1000);
+
+    return () => {
+      // return clearTimeout(timer);
+    };
+  }, []);
+
   useEffect(() => {
     console.log(
       '==*******==',

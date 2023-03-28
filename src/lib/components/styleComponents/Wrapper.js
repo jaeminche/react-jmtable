@@ -22,6 +22,10 @@ const Wrapper = styled.div`
       padding-right: 3px;
     }
   }
+
+  .text-center {
+    text-align: center;
+  }
 `;
 
 const TableWrapper = props => {

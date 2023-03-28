@@ -1,18 +1,37 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useMemo } from 'react';
 import TableHead from './common/table/TableHead';
 import TableWrapper from './styleComponents/Wrapper';
-// Scss
+import TableSection from './common/table/TableSection';
+import {
+  HEADER_PLACEHOLDER,
+  SAMPLE_BODY,
+  SAMPLE_HEADER,
+} from '../constants/sampledata';
+
+// Scss and css
 import '../style/scss/styles.scss';
+import '../index.css';
 
 // Prototype
 import '../utils/prototype';
 
-import TableSection from './common/table/TableSection';
-
-const JmTable = props => {
-  const { tableHeader, tableBody, customStyle, ...rest } = props || {};
+const JmTable = ({
+  showSampleData = false,
+  tableHeader: _tableHeader,
+  tableBody: _tableBody,
+  customStyle,
+  ...rest
+}) => {
   const { tableWidth } = customStyle || {};
+
+  const tableHeader = useMemo(() => {
+    return showSampleData ? SAMPLE_HEADER : _tableHeader || HEADER_PLACEHOLDER;
+  }, [showSampleData, _tableHeader]);
+
+  const tableBody = useMemo(() => {
+    return showSampleData ? SAMPLE_BODY : _tableBody || [];
+  }, [showSampleData, _tableBody]);
 
   return (
     <TableWrapper tableWidth={tableWidth || '100%'}>
@@ -27,7 +46,9 @@ const JmTable = props => {
         ) : (
           <tbody>
             <tr>
-              <td colSpan={tableHeader?.length}>No data to display</td>
+              <td colSpan={tableHeader?.length} className="text-center">
+                No data to display
+              </td>
             </tr>
           </tbody>
         )}

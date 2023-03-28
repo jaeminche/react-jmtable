@@ -30,6 +30,21 @@ export const SAMPLE_BODY = Array(2000)
     };
   });
 
+export const HEADER_PLACEHOLDER = [
+  {
+    key: 'no',
+    label: 'No',
+    type: 'no',
+    width: '6%',
+  },
+  {
+    key: 'id',
+    label: 'id',
+    type: 'text',
+    width: '8%',
+  },
+];
+
 function genPhoneNumbers(num) {
   let phoneNumbers = new Set();
   while (phoneNumbers.size < num) {
