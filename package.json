@@ -1,6 +1,6 @@
 {
   "name": "react-jmtable",
-  "version": "0.3.05",
+  "version": "0.3.06",
   "module": "dist/index.js",
   "main": "dist/index.js",
   "keywords": [
