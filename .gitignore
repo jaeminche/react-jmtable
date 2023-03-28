@@ -31,3 +31,5 @@ public
 
 ### VisualStudioCode ###
 .vscode/*
+
+yarn.lock

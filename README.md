@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+<h1 align="center">Welcome to react-jmtable 👋</h1>
+<p>
+  <a href="https://www.npmjs.com/package/react-jmtable" target="_blank">
+    <img alt="Version" src="https://img.shields.io/npm/v/react-jmtable.svg">
+  </a>
+  <a href="#" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Get your data specification ready, your optimized table will pop up!
 
-## Available Scripts
+## Install
 
-In the project directory, you can run:
+```sh
+yarn add react-jmtable
+```
 
-### `npm start`
+## Usage
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+pass your data like this:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```sh
 
-### `npm test`
+  const SAMPLE_HEADER = [
+    { key: 'checkbox', label: '', type: 'checkbox', width: '4%' },
+    { key: 'no', label: 'No', type: 'no', width: '6%' },
+    { key: 'id', label: 'id', type: 'text', width: '8%' },
+    { key: 'username', label: 'user name', type: 'text', width: '9%' },
+    { key: 'tel', label: 'tel', type: 'tel', width: '9%' },
+    { key: 'issuedAmount', label: 'issued amount', type: 'number', width: '14%' },
+    { key: 'memo', label: 'memo', type: 'text', width: '8%' },
+    { key: 'createdAt', label: 'created at', type: 'date', width: '8%' },
+    { key: 'mod', label: 'Mod', type: 'button', width: '5%' },
+    { key: 'del', label: 'del', type: 'del', width: '5%' },
+  ];
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  const SAMPLE_BODY = [{
+    id: 1,
+    username: 'Jae M. Choi',
+    tel: 000-0000-0000,
+    issuedAmount: 1000,
+    memo: 'memo',
+    mod: '',
+    createdAt: new Date(),
+  }];
 
-### `npm run build`
+  const { checkedIndexes, JmTable, tableBody } = useJmTable({
+    // showSampleData: true,  // If you want to show sample data, set this to true
+    tableHeader: SAMPLE_HEADER,
+    tableBody: SAMPLE_BODY,
+    customStyle: {
+      tableWidth: '80%',
+    },
+  });
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  return <div className="App">{JmTable}</div>;
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Author
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+👤 **Jae M. Choi**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Github: [@jaeminche](https://github.com/jaeminche)
+- LinkedIn: [@jaemchoi](https://linkedin.com/in/jaemchoi)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Show your support
 
-## Learn More
+Give a ⭐️ if this project helped you!
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
