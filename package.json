@@ -1,9 +1,11 @@
 {
   "name": "react-jmtable",
-  "version": "0.3.06",
+  "version": "0.3.09",
   "module": "dist/index.js",
   "main": "dist/index.js",
   "keywords": [
+    "react-jmtable", 
+    "jmtable",
     "table",
     "react-table"
   ],
@@ -19,6 +21,7 @@
     "react-scripts": "5.0.1"
   },
   "peerDependencies": {
+
   },
   "scripts": {
     "start": "react-scripts start",
