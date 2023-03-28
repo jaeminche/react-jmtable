@@ -8,9 +8,9 @@ export const SAMPLE_HEADER = [
   { key: 'issuedAmount', label: 'issued amount', type: 'number', width: '14%' },
   { key: 'memo', label: 'memo', type: 'text', width: '8%' },
   { key: 'createdAt', label: 'created at', type: 'date', width: '8%' },
-  { key: 'mod', label: 'Mod', type: 'evtBtn', width: '5%' },
-  { key: 'mod1', label: 'Mod1', type: 'evtBtn', width: '5%' },
-  { key: 'del', label: 'del', type: 'del-x-box', width: '5%' },
+  { key: 'mod', label: 'Mod', type: 'button', width: '5%' },
+  { key: 'mod1', label: 'Mod1', type: 'button', width: '5%' },
+  { key: 'del', label: 'del', type: 'del', width: '5%' },
 ];
 
 const phoneNumbers = genPhoneNumbers(2000);
