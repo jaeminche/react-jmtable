@@ -51,6 +51,9 @@ pass your data like this:
     tableBody: SAMPLE_BODY,
     customStyle: {
       tableWidth: '80%',
+      tableBody: {
+        background: 'lightBlue'
+      }
     },
     handleEvent: {
       mod: e => console.log('mod button clicked', e),

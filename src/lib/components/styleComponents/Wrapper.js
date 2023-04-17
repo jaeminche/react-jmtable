@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   table {
     font-size: 0.875rem;
     width: ${props => props.tableWidth};
-
+    ${props => props.tableStyle && css(props.tableStyle)};
     tbody {
       border: 1px solid ${props => props.theme.borderPrimary};
     }
@@ -29,11 +29,11 @@ const Wrapper = styled.div`
 `;
 
 const TableWrapper = props => {
-  const { tableWidth } = props;
+  const { tableWidth, style } = props;
 
   const { children } = props;
   return (
-    <Wrapper id={'myDiv'} tableWidth={tableWidth}>
+    <Wrapper id={'myDiv'} tableWidth={tableWidth} tableStyle={style.tableBody}>
       {children}
     </Wrapper>
   );

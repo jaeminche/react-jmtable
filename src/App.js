@@ -19,6 +19,9 @@ function App() {
     tableBody: sampleAsyncBody, // for testing async data
     customStyle: {
       tableWidth: '80%',
+      tableBody: {
+        // background: 'lightBlue',
+      },
     },
     handleEvent: {
       mod: e => console.log('mod button clicked', e),

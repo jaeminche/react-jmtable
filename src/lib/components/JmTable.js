@@ -34,7 +34,7 @@ const JmTable = ({
   }, [showSampleData, _tableBody]);
 
   return (
-    <TableWrapper tableWidth={tableWidth || '100%'}>
+    <TableWrapper tableWidth={tableWidth || '100%'} style={customStyle}>
       <table>
         <TableHead tableHeader={tableHeader} />
         {tableBody?.length > 0 ? (
