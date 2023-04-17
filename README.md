@@ -23,16 +23,16 @@ pass your data like this:
 ```sh
 
   const SAMPLE_HEADER = [
-    { key: 'checkbox', label: '', type: 'checkbox', width: '4%' },
-    { key: 'no', label: 'No', type: 'no', width: '6%' },
-    { key: 'id', label: 'id', type: 'text', width: '8%' },
-    { key: 'username', label: 'user name', type: 'text', width: '9%' },
-    { key: 'tel', label: 'tel', type: 'tel', width: '9%' },
-    { key: 'issuedAmount', label: 'issued amount', type: 'number', width: '14%' },
-    { key: 'memo', label: 'memo', type: 'text', width: '8%' },
-    { key: 'createdAt', label: 'created at', type: 'date', width: '8%' },
-    { key: 'mod', label: 'Mod', type: 'button', width: '5%' },
-    { key: 'del', label: 'del', type: 'del', width: '5%' },
+    { name: 'checkbox', label: '', type: 'checkbox', width: '4%' },
+    { name: 'no', label: 'No', type: 'no', width: '6%' },
+    { name: 'id', label: 'id', type: 'text', width: '8%' },
+    { name: 'username', label: 'user name', type: 'text', width: '9%' },
+    { name: 'tel', label: 'tel', type: 'tel', width: '9%' },
+    { name: 'issuedAmount', label: 'issued amount', type: 'number', width: '14%' },
+    { name: 'memo', label: 'memo', type: 'text', width: '8%' },
+    { name: 'createdAt', label: 'created at', type: 'date', width: '8%' },
+    { name: 'mod', label: 'Mod', type: 'button', width: '5%' },
+    { name: 'del', label: 'del', type: 'del', width: '5%' },
   ];
 
   const SAMPLE_BODY = [{

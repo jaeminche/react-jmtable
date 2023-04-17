@@ -34,7 +34,7 @@ const TableHead = props => {
               key={`${tableId}-th-${idx}`}
               colSpan={head.colspan || '1'}
               rowSpan={head.rowspan || '1'}
-              className={head.key === 'check' ? 'cursor-pointer' : ''}
+              className={head.name === 'check' ? 'cursor-pointer' : ''}
               onClick={tableHeadClickEvent}
               width={head.width}
             >

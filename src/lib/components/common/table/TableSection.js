@@ -57,7 +57,7 @@ const MemoizedTableRow = React.memo(props => {
     handleCheckedRowIndexes,
     ...rest
   } = props || {};
-  const tBodyCols = tableHeader?.map(item => item.key);
+  const tBodyCols = tableHeader?.map(item => item.name);
 
   return (
     <StyledTr
