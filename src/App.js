@@ -20,6 +20,11 @@ function App() {
     customStyle: {
       tableWidth: '80%',
     },
+    handleEvent: {
+      mod: e => console.log('mod button clicked', e),
+      mod1: () => console.log('mod1 button clicked'),
+      del: () => console.log('delete button clicked'),
+    },
   });
 
   useEffect(() => {
@@ -33,16 +38,6 @@ function App() {
       // return clearTimeout(timer);
     };
   }, []);
-
-  useEffect(() => {
-    console.log(
-      '==*******==',
-      SAMPLE_HEADER,
-      SAMPLE_BODY,
-      checkedIndexes,
-      tableBody,
-    );
-  }, [checkedIndexes]);
 
   return <div className="App">{JmTable}</div>;
 }

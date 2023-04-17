@@ -5,12 +5,18 @@ import Icon from '../Icon';
 import Button from './Button';
 
 const EvtBtn = React.memo(props => {
-  const { handleEvent = null, idx, tableId = '', label = 'Mod' } = props;
+  const {
+    handleEvent = null,
+    colDataName,
+    idx,
+    tableId = '',
+    label = 'Mod',
+  } = props;
   return (
     <label htmlFor={`${tableId}-evtBtn-${idx}`}>
       <Button>{label}</Button>
       <input
-        onClick={handleEvent}
+        onClick={handleEvent[colDataName]}
         readOnly
         id={`${tableId}-evtBtn-${idx}`}
         value={idx}
@@ -21,13 +27,13 @@ const EvtBtn = React.memo(props => {
 });
 
 const DelBtn = React.memo(props => {
-  const { handleDel = null, idx, tableId } = props;
+  const { handleEvent = null, colDataName, idx, tableId } = props;
 
   return (
     <label htmlFor={`${tableId}-delBtn-${idx}`}>
       <Icon src={ICON_DEL_BTN} width="10px" height="10px" alt="delete button" />
       <input
-        onClick={handleDel}
+        onClick={handleEvent[colDataName]}
         readOnly
         id={`${tableId}-delBtn-${idx}`}
         value={idx}

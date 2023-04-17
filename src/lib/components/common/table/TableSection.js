@@ -72,13 +72,29 @@ const MemoizedTableRow = React.memo(props => {
       }
     >
       {tBodyCols.map((tdKey, idx1) => {
-        const { type: colDataType, label: colDataLabel } = tableHeader[idx1];
+        const {
+          type: colDataType,
+          label: colDataLabel,
+          name: colDataName,
+        } = tableHeader[idx1];
+
         return (
           <td key={idx1} width={tableHeader[idx1].width}>
             {colDataType === 'button' ? (
-              <EvtBtn idx={idx} rowD={rowD} label={colDataLabel} {...rest} />
+              <EvtBtn
+                idx={idx}
+                rowD={rowD}
+                label={colDataLabel}
+                colDataName={colDataName}
+                {...rest}
+              />
             ) : colDataType === 'del' ? (
-              <DelBtn idx={idx} label={colDataLabel} {...rest} />
+              <DelBtn
+                idx={idx}
+                label={colDataLabel}
+                colDataName={colDataName}
+                {...rest}
+              />
             ) : colDataType === 'checkbox' ? (
               <div className="checkbox-center">
                 <CheckBox
