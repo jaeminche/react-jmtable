@@ -52,6 +52,11 @@ pass your data like this:
     customStyle: {
       tableWidth: '80%',
     },
+    handleEvent: {
+      mod: e => console.log('mod button clicked', e),
+      mod1: () => console.log('mod1 button clicked'),
+      del: () => console.log('delete button clicked'),
+    },
   });
 
   return <div className="App">{JmTable}</div>;

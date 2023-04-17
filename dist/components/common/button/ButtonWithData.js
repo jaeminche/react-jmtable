@@ -6,6 +6,7 @@ import Button from './Button';
 const EvtBtn = /*#__PURE__*/React.memo(props => {
   const {
     handleEvent = null,
+    colDataName,
     idx,
     tableId = '',
     label = 'Mod'
@@ -13,7 +14,7 @@ const EvtBtn = /*#__PURE__*/React.memo(props => {
   return /*#__PURE__*/React.createElement("label", {
     htmlFor: `${tableId}-evtBtn-${idx}`
   }, /*#__PURE__*/React.createElement(Button, null, label), /*#__PURE__*/React.createElement("input", {
-    onClick: handleEvent,
+    onClick: handleEvent[colDataName],
     readOnly: true,
     id: `${tableId}-evtBtn-${idx}`,
     value: idx,
@@ -24,7 +25,8 @@ const EvtBtn = /*#__PURE__*/React.memo(props => {
 });
 const DelBtn = /*#__PURE__*/React.memo(props => {
   const {
-    handleDel = null,
+    handleEvent = null,
+    colDataName,
     idx,
     tableId
   } = props;
@@ -36,7 +38,7 @@ const DelBtn = /*#__PURE__*/React.memo(props => {
     height: "10px",
     alt: "delete button"
   }), /*#__PURE__*/React.createElement("input", {
-    onClick: handleDel,
+    onClick: handleEvent[colDataName],
     readOnly: true,
     id: `${tableId}-delBtn-${idx}`,
     value: idx,
