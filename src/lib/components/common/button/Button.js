@@ -5,7 +5,6 @@ const StyledButton = styled.div`
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  /* width: 3.5rem; */
 
   button,
   .not-submit-but-box,
