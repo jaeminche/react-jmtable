@@ -13,8 +13,19 @@ function App() {
     React.useState(HEADER_PLACEHOLDER);
   const [sampleAsyncBody, setSampleAsyncBody] = React.useState([]);
 
-  const handleEvent = e => {
-    console.log('mod button clicked', e);
+  const handleModClick = e => {
+    const { value } = e.target;
+    console.log('mod button clicked', value);
+  };
+
+  const handleMod1Click = e => {
+    const { value } = e.target;
+    console.log('mod1 button clicked', value);
+  };
+
+  const handleDelClick = e => {
+    const { value } = e.target;
+    console.log('del button clicked', value);
   };
 
   const { checkedIndexes, JmTable, tableBody } = useJmTable({
@@ -28,9 +39,9 @@ function App() {
       },
     },
     handleEvent: {
-      mod: handleEvent,
-      mod1: handleEvent,
-      del: handleEvent,
+      mod: handleModClick,
+      mod1: handleMod1Click,
+      del: handleDelClick,
     },
   });
 
