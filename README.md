@@ -12,7 +12,7 @@
 
 ## Preview
 <p><strong>There are 2000 rows in this table, and one click takes a rendering duration of < 1ms!</strong></p>
-<p><strong>Without it? 700ms.</strong></p>
+<p><strong>Without the optimization feature? 700ms.</strong></p>
 
 <p>The browser's profiler highlights updates with each click and render.</p>
 <p>A single green box appears around the clicked checkbox, indicating successful optimization.</p>
