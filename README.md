@@ -8,7 +8,24 @@
   </a>
 </p>
 
-> Get your data specification ready, your optimized table will pop up!
+> <strong>Maximize the efficiency of your table with rendering-optimized checkboxes just by setting your data specifications.</strong>
+
+## Preview
+<p><strong>There are 2000 rows in this table, and one click takes a rendering duration of < 0.1ms!</strong></p>
+<p><strong>Without it? 700ms.</strong></p>
+
+<p>The browser's profiler highlights updates with each click and render.</p>
+<p>A single green box appears around the clicked checkbox, indicating successful optimization.</p>
+
+<a href="#" target="_blank">
+    <img alt="Jmtable profiler" src="https://user-images.githubusercontent.com/26568425/232709290-9ec6e185-93c8-4d55-ae78-dbb6ab48ab77.png" />
+</a>
+
+<a href="#" target="_blank">
+    <img alt="Jmtable Preview" src="https://user-images.githubusercontent.com/26568425/232708987-20441b40-b38e-4025-a7c4-cdf6e29f1b8b.gif" />
+</a>
+
+
 
 ## Install
 
