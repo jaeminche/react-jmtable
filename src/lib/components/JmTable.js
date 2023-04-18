@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { useMemo } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import TableHead from './common/table/TableHead';
 import TableWrapper from './styleComponents/Wrapper';
 import TableSection from './common/table/TableSection';
@@ -21,6 +21,7 @@ const JmTable = ({
   tableHeader: _tableHeader,
   tableBody: _tableBody,
   customStyle,
+  handleEvent,
   ...rest
 }) => {
   const { tableWidth } = customStyle || {};
@@ -33,6 +34,8 @@ const JmTable = ({
     return showSampleData ? SAMPLE_BODY : _tableBody || [];
   }, [showSampleData, _tableBody]);
 
+  const _handleEvent = useCallback(handleEvent, []);
+
   return (
     <TableWrapper tableWidth={tableWidth || '100%'} style={customStyle}>
       <table>
@@ -41,6 +44,7 @@ const JmTable = ({
           <TableSection
             tableHeader={tableHeader}
             tableBody={tableBody}
+            handleEvent={_handleEvent}
             {...rest}
           />
         ) : (

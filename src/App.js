@@ -13,6 +13,10 @@ function App() {
     React.useState(HEADER_PLACEHOLDER);
   const [sampleAsyncBody, setSampleAsyncBody] = React.useState([]);
 
+  const handleEvent = e => {
+    console.log('mod button clicked', e);
+  };
+
   const { checkedIndexes, JmTable, tableBody } = useJmTable({
     // showSampleData: true,  // If developer wants to show sample data, set this to true
     tableHeader: sampleAsyncHeader, // for testing async data
@@ -24,9 +28,9 @@ function App() {
       },
     },
     handleEvent: {
-      mod: e => console.log('mod button clicked', e),
-      mod1: () => console.log('mod1 button clicked'),
-      del: () => console.log('delete button clicked'),
+      mod: handleEvent,
+      mod1: handleEvent,
+      del: handleEvent,
     },
   });
 
