@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-extend-native
 Date.prototype.format = function (f) {
   if (!this.valueOf()) return ' ';
   const weekName = ['Sun', 'Mon', 'Tues', 'Wed', 'Thu', 'Fri', 'Sat'];

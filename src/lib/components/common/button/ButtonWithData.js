@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import ICON_DEL_BTN from '../../../assets/icon/delete.png';
 import Icon from '../Icon';

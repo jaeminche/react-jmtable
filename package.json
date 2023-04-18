@@ -4,7 +4,7 @@
   "module": "dist/index.js",
   "main": "dist/index.js",
   "keywords": [
-    "react-jmtable", 
+    "react-jmtable",
     "jmtable",
     "table",
     "react-table"
@@ -12,17 +12,15 @@
   "author": "Jae M. Choi",
   "license": "MIT",
   "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
     "sass": "^1.59.2",
     "sass-loader": "^13.2.0",
     "styled-components": "^5.3.9",
-    "web-vitals": "^2.1.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1"
+    "web-vitals": "^2.1.4"
   },
-  "peerDependencies": {
-
-  },
+  "peerDependencies": {},
   "scripts": {
     "start": "react-scripts start",
     "test": "react-scripts test",
@@ -50,7 +48,8 @@
   "devDependencies": {
     "@babel/cli": "^7.21.0",
     "@babel/preset-react": "^7.18.6",
-    "eslint-config-prettier": "^8.7.0",
+    "eslint": "^8.38.0",
+    "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1"
   }
 }

@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 export const SAMPLE_HEADER = [
   { name: 'checkbox', label: '', type: 'checkbox', width: '4%' },
   { name: 'no', label: 'No', type: 'no', width: '6%' },

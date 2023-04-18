@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React, { useCallback, useMemo } from 'react';
 import TableHead from './common/table/TableHead';
 import TableWrapper from './styleComponents/Wrapper';

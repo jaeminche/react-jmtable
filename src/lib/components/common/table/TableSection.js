@@ -1,6 +1,3 @@
-/* eslint-disable react/display-name */
-/* eslint-disable no-undef */
-/* eslint-disable react/prop-types */
 import React from 'react';
 import styled from 'styled-components';
 import { DelBtn, EvtBtn } from '../button/ButtonWithData';

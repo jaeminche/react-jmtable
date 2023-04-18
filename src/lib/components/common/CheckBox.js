@@ -1,7 +1,4 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/display-name */
-/* eslint-disable react/prop-types */
-import React, { useCallback, useEffect, useState, useContext } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import CHECK_NO from '../../assets/icon/checkbox.png';
 import CHECK_YES from '../../assets/icon/checkbox_checked.png';
