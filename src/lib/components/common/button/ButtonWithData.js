@@ -13,12 +13,12 @@ const EvtBtn = React.memo(props => {
     label = 'Mod',
   } = props;
   return (
-    <label htmlFor={`${tableId}-evtBtn-${idx}`}>
+    <label htmlFor={`${tableId}-${colDataName}-evtBtn-${idx}`}>
       <Button>{label}</Button>
       <input
         onClick={handleEvent[colDataName]}
         readOnly
-        id={`${tableId}-evtBtn-${idx}`}
+        id={`${tableId}-${colDataName}-evtBtn-${idx}`}
         value={idx}
         style={{ display: 'none' }}
       />
