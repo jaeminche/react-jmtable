@@ -11,7 +11,7 @@
 > <strong>Maximize the efficiency of your table with rendering-optimized checkboxes just by setting your data specifications.</strong>
 
 ## Preview
-<p><strong>There are 2000 rows in this table, and one click takes a rendering duration of < 0.1ms!</strong></p>
+<p><strong>There are 2000 rows in this table, and one click takes a rendering duration of < 1ms!</strong></p>
 <p><strong>Without it? 700ms.</strong></p>
 
 <p>The browser's profiler highlights updates with each click and render.</p>
